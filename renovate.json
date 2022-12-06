@@ -3,7 +3,7 @@
   "extends": [
     "config:base"
   ],
-  "enabledManagers": ["regex"],
+  "enabledManagers": ["regex", "terraform", "terraform-version"],
   "regexManagers": [
     {
       "fileMatch": ["\\.tf$"],
@@ -18,7 +18,7 @@
     {
       "fileMatch": ["\\.tf$"],
       "matchStrings": [
-        "source\\s*=\\s*\"hashicorp\/(?<depName>.+?)\"\\n\\s*version\\s*=\\s*\"=\\s*(?<currentValue>.+?)\"$"
+        "source\\s*=\\s*\"hashicorp\/(?<depName>.+?)\"\\n\\s*version\\s*=\\s*\"=\\s*(?<currentValue>.+?)\""
       ],
       "extractVersionTemplate": "v(?<version>.*)$",
       "depTypeTemplate": "required_provider",
