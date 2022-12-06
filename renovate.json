@@ -8,11 +8,11 @@
     {
       "fileMatch": ["\\.tf$"],
       "matchStrings": [
-        "^  required_version = \"= (?<currentValue>/*?)\"$",
-        "\"= (?<currentValue>.*?)\"$"
+        "required_version\\s*=\\s*\"=\\s*(?<currentValue>.+?)\""
       ],
       "depNameTemplate": "hashicorp/terraform",
-      "datasourceTemplate": "github-releases"
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "hashicorp"
     }
   ]
 }
