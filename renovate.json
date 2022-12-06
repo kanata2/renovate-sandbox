@@ -14,16 +14,6 @@
       "depNameTemplate": "hashicorp/terraform",
       "datasourceTemplate": "github-releases",
       "versioningTemplate": "hashicorp"
-    },
-    {
-      "fileMatch": ["\\.tf$"],
-      "matchStrings": [
-        "source\\s*=\\s*\"hashicorp\/(?<depName>.+?)\"\\n\\s*version\\s*=\\s*\"=\\s*(?<currentValue>.+?)\""
-      ],
-      "extractVersionTemplate": "v(?<version>.*)$",
-      "depTypeTemplate": "required_provider",
-      "datasourceTemplate": "github-releases",
-      "versioningTemplate": "hashicorp"
     }
   ]
 }
