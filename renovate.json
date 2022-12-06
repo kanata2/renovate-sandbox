@@ -10,7 +10,6 @@
       "matchStrings": [
         "\"= (?<currentValue>.*?)\"$"
       ],
-      "depTypeTemplate": "required_version",
       "depNameTemplate": "hashicorp/terraform",
       "datasourceTemplate": "github-releases"
     }
