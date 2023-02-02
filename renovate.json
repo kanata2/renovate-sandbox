@@ -3,6 +3,7 @@
   "extends": [
     "config:base"
   ],
+  "labels": ["service: {{ packageFileDir }}"],
   "enabledManagers": ["regex", "terraform", "terraform-version"],
   "regexManagers": [
     {
