@@ -5,7 +5,7 @@
   ],
   "labels": [
     "provider:{{#if (containsString packageFileDir 'aws')}}aws{{else}}{{#if (containsString packageFileDir 'gcp')}}gcp{{else}}unknown{{/if}}{{/if}}",
-    "service:{{ replace 'services/' '' (replace 'services-iam/' '' replace( 'aws/' '' replace( 'gcp/' '' packageFileDir))) }}"
+    "service:{{ replace 'services/' '' (replace 'services-iam/' '' (replace 'aws/' '' (replace 'gcp/' '' packageFileDir))) }}"
   ],
   "enabledManagers": ["regex", "terraform", "terraform-version"],
   "regexManagers": [
