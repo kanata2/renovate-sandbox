@@ -4,8 +4,9 @@
     "config:base"
   ],
   "labels": [
-    "provider:{{#if (containsString packageFileDir 'aws')}}aws{{else}}{{#if (containsString packageFileDir 'gcp')}}gcp{{else}}unknown{{/if}}{{/if}}",
-    "service:{{ replace 'services/' '' (replace 'services-iam/' '' (replace 'aws/' '' (replace 'gcp/' '' packageFileDir))) }}"
+    "platform:{{#if (containsString packageFileDir '/aws/')}}aws{{else}}{{#if (containsString packageFileDir '/gcp/')}}gcp{{else}}unknown{{/if}}{{/if}}",
+    "env:{{#if (or (containsString packageFileDir '-dev/') (containsString packageFileDir 'development/'))}}dev{{else}}{{#if (or (contrainsString packageFileDir '-prd/') (containsString packageFileDir 'production/'))}}prd{{else}}{{#if (containsString( packageFileDir 'load/'))}}load{{else}}others{{/if}}{{/if}}{{/if}}",
+    "service:{{ replace 'services/' '' (replace 'services-iam/' '' (replace 'aws/' '' (replace 'gcp/' '' (replace 'development/' '' (replace 'production/' '' packageFileDir))))) }}"
   ],
   "enabledManagers": ["regex", "terraform", "terraform-version"],
   "regexManagers": [
